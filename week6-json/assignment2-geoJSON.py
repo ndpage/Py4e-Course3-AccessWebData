@@ -1,3 +1,9 @@
+# Author: Nathan Page
+# Assignment: Calling a JSON API
+# Description: Get data from a JSON API and extract the Place ID from the response
+# Date: August 13, 2021
+
+
 import urllib.request, urllib.parse, urllib.error
 import json
 import ssl
@@ -42,10 +48,6 @@ while True:
         print(data)
         continue
 
-    print(json.dumps(js, indent=4))
-
-    lat = js['results'][0]['geometry']['location']['lat']
-    lng = js['results'][0]['geometry']['location']['lng']
-    print('lat', lat, 'lng', lng)
-    location = js['results'][0]['formatted_address']
-    print(location)
+    #print(json.dumps(js, indent=4))
+    place_id = js['results'][0]['place_id']
+    print('Place ID:',place_id)
